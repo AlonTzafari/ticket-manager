@@ -6,6 +6,7 @@ const api = Router();
 api.use("/tickets", tickets);
 
 api.use((err, req, res, next) => {
+    console.log(err);
     res.status(500).send(err);
 });
 
