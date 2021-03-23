@@ -12,6 +12,11 @@ class Database {
     async getAll() {
         return await Ticket.find({});
     }
+
+    async getContainsString(text) {
+        const regex =  new RegExp(text, "i");
+        return await Ticket.find({title: {$regex: regex}});
+    }
 }
 
 module.exports = Database;
