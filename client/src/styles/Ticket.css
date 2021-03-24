@@ -13,10 +13,6 @@
     background-color: white;
 }
 
-.ticket.hide {
-    display: none;
-}
-
 .labelList {
     display: flex;
 }
