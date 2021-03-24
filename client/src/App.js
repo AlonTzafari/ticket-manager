@@ -39,7 +39,11 @@ function App() {
          <span id="restoreHideTickets" onClick={restoreTickets}>restore</span>)
       </span>
       <div className="ticketList">
-        {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels} isHidden={hiddenTickets.includes(i)} hideTicket={() => hideTicket(i)}/>)}
+        {tickets.map( (ticket, i) => 
+          hiddenTickets.includes(i)
+            ? null
+            : <Ticket key={i} ticket={ticket} labels={ticket.labels} hideTicket={() => hideTicket(i)}/>
+        )}
       </div>
     </div>
   );
