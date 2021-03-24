@@ -6,7 +6,7 @@ const ticketSchema = new mongoose.Schema({
     userEmail: String,
     done: Boolean,
     creationTime: Number,
-    creationTime: [String],
+    labels: [String],
 });
 
 module.exports = mongoose.model("Ticket", ticketSchema, "tickets");

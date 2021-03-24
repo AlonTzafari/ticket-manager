@@ -23,6 +23,7 @@ function App() {
     <div>
       <h1>Ticket Manager</h1>
       <SearchBar searchHandler={searchHandler}/>
+      <span>showing {tickets.length} results</span>
       {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels}/>)}
     </div>
   );

@@ -8,7 +8,7 @@ function Ticket(props) {
             <p>{props.ticket.content}</p>
             {props.labels?.map((label, i) => <Label key={i} label={label} />)}
             <p>
-                <span>{props.ticket.userEmail}</span> | <span>{formatDate( Date(props.ticket.creationTime) )}</span>
+                <span>{props.ticket.userEmail}</span> | <span>{formatDate( new Date(props.ticket.creationTime) )}</span>
             </p>
         </div>
     );
@@ -17,14 +17,13 @@ function Ticket(props) {
 export default Ticket;
 
 function formatDate(date) {
-    const ndate = new Date()
-    const dd = ndate.getDate();
-    const mm = ndate.getMonth() + 1;
-    const yyyy = ndate.getFullYear();
-    const {hr, ampm} = ndate.getHours() >= 12
-        ? {hr: ndate.getHours() - 12, ampm:"PM"}
-        :{hr: ndate.getHours(), ampm:"AM"};
-    const min = ndate.getMinutes();
-    const sec = ndate.getSeconds();
+    const dd = date.getDate();
+    const mm = date.getMonth() + 1;
+    const yyyy = date.getFullYear();
+    const {hr, ampm} = date.getHours() > 12
+        ? {hr: date.getHours() - 12, ampm:"PM"}
+        :{hr: date.getHours(), ampm:"AM"};
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
     return `${dd}/${mm}/${yyyy}, ${hr}:${min}:${sec} ${ampm}`;
 }
