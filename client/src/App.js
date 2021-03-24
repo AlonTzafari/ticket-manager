@@ -33,12 +33,12 @@ function App() {
     <div className="app">
       <h1>Ticket Manager</h1>
       <SearchBar searchHandler={searchHandler}/>
-      <span>
-        showing {tickets.length} results
-        (<span id="hideTicketsCounter" className="hideTicketsCounter">{hiddenTickets.length}</span>{" hidden - "} 
-         <span id="restoreHideTickets" onClick={restoreTickets}>restore</span>)
-      </span>
       <div className="ticketList">
+        <span className="ticketListDetails">
+          showing {tickets.length} results
+          (<span id="hideTicketsCounter" className="hideTicketsCounter">{hiddenTickets.length}</span>{" hidden - "} 
+          <span id="restoreHideTickets" onClick={restoreTickets}>restore</span>)
+        </span>
         {tickets.map( (ticket, i) => 
           hiddenTickets.includes(i)
             ? null
