@@ -13,6 +13,10 @@
     background-color: white;
 }
 
+.ticket.hide {
+    display: none;
+}
+
 .labelList {
     display: flex;
 }
@@ -21,4 +25,12 @@
     color: rgb(99, 99, 99);
     font-size: 0.8em;
     font-weight: bold;
+}
+
+.hideTicketButton {
+    margin-left: auto;
+}
+
+.hideTicketButton:hover {
+    cursor: pointer;
 }

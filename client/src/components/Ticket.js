@@ -4,7 +4,8 @@ import "../styles/Ticket.css";
 
 function Ticket(props) {
     return (
-        <div className="ticket">
+        <div className={`ticket ${props.isHidden ? "hide": ""}`}>
+            <div className="hideTicketButton" onClick={props.hideTicket}>Hide</div>
             <h2>{props.ticket.title}</h2>
             <p>{props.ticket.content}</p>
             <div className="labelList">

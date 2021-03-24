@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [tickets, setTickets] = useState([]);
+  const [hiddenTickets, setHiddenTickets] = useState([]);
   
   useEffect(() => {
     axios.get("/api/tickets")
@@ -19,13 +20,26 @@ function App() {
     .then(({data}) => setTickets(data));
   }
 
+  function hideTicket(key) {
+    if(hiddenTickets.includes(key)) return;
+    setHiddenTickets( hiddenTickets.concat([key]) );
+  }
+
+  function restoreTickets() {
+    setHiddenTickets([]);
+  }
+
   return (
     <div className="app">
       <h1>Ticket Manager</h1>
       <SearchBar searchHandler={searchHandler}/>
-      <span>showing {tickets.length} results</span>
+      <span>
+        showing {tickets.length} results
+        (<span id="hideTicketsCounter" className="hideTicketsCounter">{hiddenTickets.length}</span>{" hidden - "} 
+         <span id="restoreHideTickets" onClick={restoreTickets}>restore</span>)
+      </span>
       <div className="ticketList">
-        {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels}/>)}
+        {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels} isHidden={hiddenTickets.includes(i)} hideTicket={() => hideTicket(i)}/>)}
       </div>
     </div>
   );
