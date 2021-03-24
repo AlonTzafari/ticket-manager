@@ -1,13 +1,12 @@
 import React from 'react';
+import Label from "./Label";
 
 function Ticket(props) {
     return (
         <div className="ticket">
             <h2>{props.ticket.title}</h2>
             <p>{props.ticket.content}</p>
-            <div>
-                {props.ticket.labels?.map(label => <span>{label}</span>)}
-            </div>
+            {props.labels?.map((label, i) => <Label key={i} label={label} />)}
             <p>
                 <span>{props.ticket.userEmail}</span> | <span>{formatDate( Date(props.ticket.creationTime) )}</span>
             </p>

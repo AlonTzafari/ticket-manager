@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <h1>Ticket Manager</h1>
-      {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket}/>)}
+      {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels}/>)}
     </div>
   );
 }
