@@ -18,9 +18,11 @@ class Database {
         const status = ticketStatus === "done" ? true : false;
         try {
             const ticket = await Ticket.findByIdAndUpdate(id, {done: status}, {new: true});
+            console.log(ticket);
+            if (ticket === null) throw "Ticket not found"
             return true;
         } catch (e) {
-            return false;
+            throw e;
         }
     }
 }
