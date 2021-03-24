@@ -14,17 +14,19 @@ function App() {
   }, []);
 
   function searchHandler(text) {
-    if(typeof(text) !== "string") throw "search input must be of type String";
+    if(typeof(text) !== "string") throw new Error("search input must be of type String");
     axios.get("/api/tickets?searchText=" + text)
     .then(({data}) => setTickets(data));
   }
 
   return (
-    <div>
+    <div className="app">
       <h1>Ticket Manager</h1>
       <SearchBar searchHandler={searchHandler}/>
       <span>showing {tickets.length} results</span>
-      {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels}/>)}
+      <div className="ticketList">
+        {tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} labels={ticket.labels}/>)}
+      </div>
     </div>
   );
 }

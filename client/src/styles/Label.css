@@ -1,0 +1,36 @@
+.label {
+    margin-right: 0.7em;
+    color: white;
+    min-width: 40px;
+    text-align: center;
+    padding: 0.1em 1em 0.1em 1em;
+    border-radius: 1.1em;
+}
+
+.Api {
+    background-color: rgb(56, 56, 202);
+}
+.Corvid {
+    background-color: rgb(32, 32, 123);
+}
+.Guidelines {
+    background-color: rgb(27, 144, 51);
+}
+.Collapse {
+    background-color: rgb(171, 70, 2);
+}
+.Expand {
+    background-color: rgb(201, 194, 0);
+}
+.Login {
+    background-color: rgb(14, 211, 14);
+}
+.Problem {
+    background-color: rgb(209, 0, 0);
+}
+.Tutorial {
+    background-color: rgb(117, 0, 111);
+}
+.ViewCount {
+    background-color: rgb(208, 0, 255);
+}
