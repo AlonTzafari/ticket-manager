@@ -1,8 +1,20 @@
-import React from 'react';
+import {useState} from 'react';
 import Label from "./Label";
+import Checkbox from "./Checkbox";
+import axios from "axios";
 import "../styles/Ticket.css";
 
 function Ticket(props) {
+
+    const [done, setDone] = useState(props.ticket.done);
+
+    function markDone(isDone) {
+        const status = isDone ? "done" : "undone";
+        axios.patch(`/api/tickets/${props.ticket._id}/${status}`)
+        .then(({data}) => {
+            if (data.updated) setDone(isDone);
+        });
+    }
     return (
         <div className="ticket">
             <div className="hideTicketButton" onClick={props.hideTicket}>Hide</div>
@@ -14,6 +26,7 @@ function Ticket(props) {
             <p className="details">
                 <span>{props.ticket.userEmail}</span> | <span>{formatDate( new Date(props.ticket.creationTime) )}</span>
             </p>
+            <Checkbox done={done} markDone={markDone}/>
         </div>
     );
 }
