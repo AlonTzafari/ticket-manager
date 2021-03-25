@@ -3,7 +3,7 @@ import "../styles/Checkbox.css";
 function Checkbox(props) {
     return (
         <div className="checkbox">
-            Check
+            Done
             <div className="container" onClick={() => props.markDone(!props.done)}>
                 <input type="checkbox" name="done" checked={props.done}/>
                 <span className="checkmark">✔</span>
