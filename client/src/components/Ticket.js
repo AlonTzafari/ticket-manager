@@ -16,7 +16,7 @@ function Ticket(props) {
         });
     }
     return (
-        <div className="ticket">
+        <div className={`ticket ${done ? "done" : null}`}>
             <div className="hideTicketButton" onClick={props.hideTicket}>Hide</div>
             <h2>{props.ticket.title}</h2>
             <p>{props.ticket.content}</p>

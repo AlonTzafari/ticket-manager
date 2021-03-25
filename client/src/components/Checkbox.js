@@ -1,10 +1,14 @@
-import React from 'react'
+import "../styles/Checkbox.css";
 
 function Checkbox(props) {
     return (
-        <label for="done">
-            Check<input type="checkbox" name="done" onClick={() => props.markDone(!props.done)} checked={props.done}></input>
-        </label>
+        <div className="checkbox">
+            Check
+            <div className="container" onClick={() => props.markDone(!props.done)}>
+                <input type="checkbox" name="done" checked={props.done}/>
+                <span className="checkmark">✔</span>
+            </div>
+        </div>
     )
 }
 

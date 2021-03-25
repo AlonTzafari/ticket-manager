@@ -30,3 +30,7 @@
 .hideTicketButton:hover {
     cursor: pointer;
 }
+
+.done {
+    opacity: 50%;
+}
