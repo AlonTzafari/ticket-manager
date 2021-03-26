@@ -30,6 +30,6 @@
     cursor: pointer;
 }
 
-.done {
-    opacity: 50%;
+.ticket.done {
+    opacity: 0.5;
 }
