@@ -1,8 +1,9 @@
 # Ticket Manager
 
-This project is a wix interview task which displays many of the skills I learned so far.
+This project is a solution tp a wix interview task.
+Built with React, Node & MongoDB.
 
-Heres A Link to to the app deployed on [heroku.](https://owl-ticket-manager.herokuapp.com/)
+Here is A Link to to the app deployed on [heroku.](https://owl-ticket-manager.herokuapp.com/)
 
 ## Bonus
 
