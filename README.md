@@ -1,6 +1,6 @@
 # Ticket Manager
 
-This project is a solution tp a wix interview task.
+This project is a solution to a wix interview task.
 
 Built with React, Node & MongoDB.
 
