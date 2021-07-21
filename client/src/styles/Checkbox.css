@@ -1,0 +1,44 @@
+.checkbox {
+    margin-left: auto;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox .container {
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox .container:hover {
+    cursor: pointer;
+}
+
+.checkbox .checkmark {
+    position: absolute;
+    display: none;
+}
+
+.checkbox input {
+    all: unset;
+    display: inline-block;
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+
+.checkbox input:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.checkbox input:checked {
+    background-color: rgb(39, 206, 13);
+}
+.checkbox input:checked ~ .checkmark {
+    display: inline;
+}
